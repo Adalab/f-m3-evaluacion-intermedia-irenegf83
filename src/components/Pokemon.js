@@ -5,7 +5,8 @@ class Pokemon extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            classFavorite: ''
+            classFavorite: '',
+            habilitiesFav: ''
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -13,30 +14,33 @@ class Pokemon extends React.Component {
     handleClick() {
         this.setState((prevState) => {
             let newClass;
+            let newHabilitiesFav;
             
             prevState.classFavorite === '' ? newClass = 'favorite' : newClass = '';
+            prevState.habilitiesFav === '' ? newHabilitiesFav = 'fav' : newHabilitiesFav = '';
             // if(prevState.classFavorite === '') {
             //     newClass = 'favorite';
             // } else {
             //     newClass = '';
             // }
             return {
-                classFavorite: newClass
+                classFavorite: newClass,
+                habilitiesFav: newHabilitiesFav
             }
             
         });
     }
     render() {
         const { data } = this.props;
-        const { classFavorite } = this.state;
+        const { classFavorite, habilitiesFav } = this.state;
         return (
             <li className={`card ${classFavorite}`} onClick={this.handleClick}>
                 <img src={data.url} alt=""/>
                 <h2>{data.name}</h2>
-                <ol>
+                <ol className="card__habilities">
                 {data.types.map(type => {
                     return(
-                    <li>{type}</li>
+                    <li className={`habilities ${habilitiesFav}`}>{type}</li>
                     )
                 })}
                 </ol>

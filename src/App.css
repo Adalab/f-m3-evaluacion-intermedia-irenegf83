@@ -26,3 +26,17 @@ ol, ul {
 .favorite {
   background-color: lightgreen;
 }
+.card__habilities {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.habilities {
+  background-color: lightgrey;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 6px;
+}
+.habilities.fav {
+  background-color: #fff;
+}
