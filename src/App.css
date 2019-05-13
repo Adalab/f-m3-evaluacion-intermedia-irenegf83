@@ -19,6 +19,8 @@ ol, ul {
   padding: 20px;
   text-align: center;
   border: 2px solid greenyellow;
+  border-radius: 10px;
+  background-color: #fff;
   cursor: pointer;
 }
 .favorite {

@@ -13,11 +13,12 @@ class Pokemon extends React.Component {
         this.setState((prevState) => {
             let newClass;
             
-            if(prevState.classFavorite === '') {
-                newClass = 'favorite';
-            } else {
-                newClass = '';
-            }
+            prevState.classFavorite === '' ? newClass = 'favorite' : newClass = '';
+            // if(prevState.classFavorite === '') {
+            //     newClass = 'favorite';
+            // } else {
+            //     newClass = '';
+            // }
             return {
                 classFavorite: newClass
             }
