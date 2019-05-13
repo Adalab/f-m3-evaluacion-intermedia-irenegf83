@@ -1,4 +1,6 @@
 import React from 'react';
+import PokeList from './components/PokeList';
+
 import './App.css';
 
 const pokemon = [
@@ -18,7 +20,8 @@ function App() {
   return (
     <div className="App">
       <h1>Mi lista de pokemon</h1>
-      <ul>
+      <PokeList pokemonArr={pokemon} />
+      {/* <ul>
           {pokemon.map(data => {
             return(
               <li>
@@ -36,7 +39,7 @@ function App() {
               </li>
             )
           })}
-      </ul>
+      </ul> */}
     </div>
   );
 }
