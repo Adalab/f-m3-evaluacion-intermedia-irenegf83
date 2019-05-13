@@ -1,10 +1,34 @@
 import React from 'react';
 
 class Pokemon extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            classFavorite: ''
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState((prevState) => {
+            let newClass;
+            
+            if(prevState.classFavorite === '') {
+                newClass = 'favorite';
+            } else {
+                newClass = '';
+            }
+            return {
+                classFavorite: newClass
+            }
+            
+        });
+    }
     render() {
         const { data } = this.props;
+        const { classFavorite } = this.state;
         return (
-            <li>
+            <li className={`card ${classFavorite}`} onClick={this.handleClick}>
                 <img src={data.url} alt=""/>
                 <h2>{data.name}</h2>
                 <ol>

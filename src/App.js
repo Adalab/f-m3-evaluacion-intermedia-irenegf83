@@ -19,27 +19,8 @@ const pokemon = [
 function App() {
   return (
     <div className="App">
-      <h1>Mi lista de pokemon</h1>
+      <h1 className="main-title">Mi lista de pokemon</h1>
       <PokeList pokemonArr={pokemon} />
-      {/* <ul>
-          {pokemon.map(data => {
-            return(
-              <li>
-                <img src={data.url} alt=""/>
-                <h2>{data.name}</h2>
-                <ol>
-                  {data.types.map(type => {
-                    return(
-                      <li>
-                        <p>{type}</p>
-                      </li>
-                    )
-                  })}
-                </ol>
-              </li>
-            )
-          })}
-      </ul> */}
     </div>
   );
 }
