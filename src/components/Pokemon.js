@@ -1,8 +1,9 @@
 import React from 'react';
+import './Pokemon.css';
 import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             classFavorite: '',
@@ -12,45 +13,45 @@ class Pokemon extends React.Component {
     }
 
     handleClick() {
-        this.setState((prevState) => {
+        this.setState(prevState => {
             let newClass;
             let newHabilitiesFav;
-            
-            prevState.classFavorite === '' ? newClass = 'favorite' : newClass = '';
-            prevState.habilitiesFav === '' ? newHabilitiesFav = 'fav' : newHabilitiesFav = '';
-            // if(prevState.classFavorite === '') {
-            //     newClass = 'favorite';
-            // } else {
-            //     newClass = '';
-            // }
+
+            prevState.classFavorite === '' ? (newClass = 'favorite') : (newClass = '');
+            prevState.habilitiesFav === '' ? (newHabilitiesFav = 'fav') : (newHabilitiesFav = '');
             return {
                 classFavorite: newClass,
                 habilitiesFav: newHabilitiesFav
-            }
-            
+            };
         });
     }
+
     render() {
         const { data } = this.props;
         const { classFavorite, habilitiesFav } = this.state;
         return (
-            <li className={`card ${classFavorite}`} onClick={this.handleClick}>
-                <img src={data.url} alt=""/>
+            <div className={`card ${classFavorite}`} onClick={this.handleClick}>
+                <img src={data.url} alt="" />
                 <h2>{data.name}</h2>
                 <ol className="card__habilities">
-                {data.types.map(type => {
-                    return(
-                    <li className={`habilities ${habilitiesFav}`}>{type}</li>
-                    )
-                })}
+                    {data.types.map((type, index) => {
+                        return (
+                            <li
+                                className={`habilities ${habilitiesFav}`}
+                                key={index}
+                            >
+                                {type}
+                            </li>
+                        );
+                    })}
                 </ol>
-            </li>
+            </div>
         );
     }
 }
 
 Pokemon.propTypes = {
-    data: PropTypes.object,
-}
+    data: PropTypes.object
+};
 
 export default Pokemon;

@@ -1,0 +1,30 @@
+.card {
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.card__habilities {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.habilities {
+    background-color: lightgrey;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.favorite {
+    background-color: lightgreen;
+}
+
+.habilities.fav {
+    background-color: #fff;
+}
